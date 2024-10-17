@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            height: 500px; /* Short height */
+            width: 100vw; /* Full viewport width */
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow: hidden; /* Ensures no scrolling */
+            padding: 20px;
+        }
+
+        img {
+            width: 750px; /* 1.5 times larger */
+            height: auto; /* Maintain aspect ratio */
+            position: relative; /* Positioning for overlap */
+            z-index: 1; /* Ensure main image is behind */
+        }
+
+        .person, #door {
+            width: 100px; /* Example width */
+            position: absolute; /* Absolute positioning for overlap */
+            cursor: pointer;
+        }
+
+        #door {
+            width: 300px; /* Adjust door width */
+            left: 500px; /* Positioned behind person3 */
+            top: 260px;
+            z-index: 1; /* Ensure door is behind person3 */
+            opacity: 0.8; /* Make it slightly transparent */
+        }
+
+        #person1 {
+            left: 200px;
+            top: 200px;
+            z-index: 2; /* Ensure person is above other elements */
+        }
+
+        #person2 {
+            left: 350px;
+            top: 280px;
+            z-index: 2;
+        }
+
+        #person3 {
+            left: 670px;
+            top: 260px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bgMusic" src="../Music/Street.wav" loop ></audio>
+<img src="../Images/Street.jpg" alt="Street Scene">
+
+<script>
+    window.addEventListener('load', function() {
+        const audio = document.getElementById('bgMusic');
+        audio.play().catch(error => {
+            console.log('Autoplay failed:', error);
+        });
+    });
+</script>
+
+<!-- Door Image -->
+<img id="door" src="../Images/door.png" alt="Door">
+
+<!-- Images of people -->
+<img id="person1" class="person" src="../Images/person1.png" alt="Person 1">
+<img id="person2" class="person" src="../Images/person2.png" alt="Person 2">
+<img id="person3" class="person" src="../Images/person3.png" alt="Person 3">
+
+<script>
+    // Redirect to nightclub.html when the door is clicked
+    document.getElementById('door').addEventListener('click', function() {
+        window.location.href = 'nightclub.html';
+    });
+
+    // Open the corresponding HTML file for each person
+    document.getElementById('person1').addEventListener('click', function() {
+        window.open('person1.html', '_blank', 'width=800,height=600');
+    });
+    document.getElementById('person2').addEventListener('click', function() {
+        window.open('person2.html', '_blank', 'width=800,height=600');
+    });
+    document.getElementById('person3').addEventListener('click', function() {
+        window.open('person3.html', '_blank', 'width=800,height=600');
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person 1</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<audio id="bgSound" src="../Music/anxious.wav" loop></audio> <!-- Add your sound file path -->
+<img id="lungGif" src="../Images/panic.gif" alt="Lung GIF">
+
+<script>
+    window.onload = function() {
+        const img = document.getElementById('lungGif');
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+
+        // Resize window to match the image size
+        window.resizeTo(imgWidth, imgHeight);
+
+        // Play the sound when the window loads
+        const audio = document.getElementById('bgSound');
+        audio.play().catch(error => {
+            console.log('Autoplay failed:', error);
+        });
+    };
+
+    // Close window on Escape key press
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            window.close();
+        }
+    });
+</script>
+</body>
+</html>

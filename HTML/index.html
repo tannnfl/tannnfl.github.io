@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Flat Page</title>
+    <style>
+        /* Base page styling */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a; /* Dark background */
+            font-family: 'Courier New', monospace; /* Pixelated, retro font */
+            color: #fff; /* White text */
+        }
+
+        /* Flat button design */
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-family: 'Courier New', monospace; /* Pixelated retro font */
+            color: #ffffff; /* White text */
+            background-color: #333333; /* Flat, dark grey background */
+            border: 2px solid #ffffff; /* Simple white border */
+            border-radius: 0; /* No rounded corners, flat feel */
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #444444; /* Slightly lighter on hover */
+            color: #ffcc00; /* Yellow text on hover for contrast */
+        }
+
+        /* Active button effect (when clicked) */
+        button:active {
+            background-color: #555555; /* Slightly darker on click */
+            color: #ffffff; /* Back to white text on click */
+        }
+    </style>
+</head>
+<body>
+  <script src="../Javascript/index.js"></script>
+
+  <button id="startButton">Strangers in a club</button>
+  <script>
+      document.getElementById('startButton').addEventListener('click', function() {
+          // Open a new window with another HTML file in the same folder
+          window.open('street.html', '_blank', 'width=800,height=600');
+      });
+  </script>
+
+</body>
+</html>
